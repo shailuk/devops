@@ -8,13 +8,13 @@ on:
     branches: 
       - main
       - master
-  pull request:
-    branches:
-      - main
-      - master
+  #pull_request:
+  #  branches:
+  #    - main
+  #    - master
   #schedule based trigger
-  schedule:
-    - cron: '0 0 * * *' # Runs every day at midnight
+  #schedule:
+  #  - cron: '0 0 * * *' # Runs every day at midnight
 
 #how to do the job?
 jobs:
