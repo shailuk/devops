@@ -1,0 +1,37 @@
+name : Run pandas job 
+
+#when to do the job?
+#Trigger the workflow
+on:
+  #event based trigger
+  push:
+    branches: 
+      - main
+      - master
+  pull request:
+    branches:
+      - main
+      - master
+  #schedule based trigger
+  schedule:
+    - cron: '0 0 * * *' # Runs every day at midnight
+
+#how to do the job?
+jobs:
+  run-pandas-job:  #Use the name of the job
+   runs on: ubuntu-latest. #specifies the operating system to run the job on. In this case, it uses the latest version of Ubuntu.
+   
+   steps:
+    - name: Checkout code. #name of the step
+      uses: actions/checkout@v2. #owner/repo@version
+
+    - name: Set up Python 3.8 #name of the step
+      uses: actions/setup-python@v2 #owner/repo@version
+      with:
+        python-version: 3.8 #specifies the version of Python to set up. Passing parameters to the action using with keyword. Here, it sets up Python version 3.8.
+
+    - name: Install dependencies #name of the step
+      run: pip install pandas #upgrades pip to the latest version.
+    
+    - name: Run pandas job #name of the step
+      run: python devops/app.py #runs the Python script named app.py.
