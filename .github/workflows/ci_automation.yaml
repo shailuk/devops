@@ -19,7 +19,7 @@ on:
 #how to do the job?
 jobs:
   run-pandas-job:  #Use the name of the job
-   runs on: ubuntu-latest. #specifies the operating system to run the job on. In this case, it uses the latest version of Ubuntu.
+   runs-on: ubuntu-latest. #specifies the operating system to run the job on. In this case, it uses the latest version of Ubuntu.
    
    steps:
     - name: Checkout code. #name of the step
