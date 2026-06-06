@@ -23,12 +23,12 @@ jobs:
    
    steps:
     - name: Checkout code. #name of the step
-      uses: actions/checkout@v2. #owner/repo@version
+      uses: actions/checkout@v4 #owner/repo@version
 
-    - name: Set up Python 3.8 #name of the step
-      uses: actions/setup-python@v2 #owner/repo@version
+    - name: Set up Python 3.9 #name of the step
+      uses: actions/setup-python@v4 #owner/repo@version
       with:
-        python-version: 3.8 #specifies the version of Python to set up. Passing parameters to the action using with keyword. Here, it sets up Python version 3.8.
+        python-version: 3.9 #specifies the version of Python to set up. Passing parameters to the action using with keyword. Here, it sets up Python version 3.8.
 
     - name: Install dependencies #name of the step
       run: pip install pandas #upgrades pip to the latest version.
